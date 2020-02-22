@@ -90,11 +90,6 @@ public class Fcm extends FirebaseMessagingService {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
-
-
-
     }
     public PendingIntent IngresaralaApp(){
         Intent i=new Intent(getApplicationContext(), MainActivity.class);
