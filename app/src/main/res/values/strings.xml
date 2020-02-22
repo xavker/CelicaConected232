@@ -2,4 +2,20 @@
     <string name="app_name">CelicaConected23</string>
     <string name="especifico">Especifico</string>
     <string name="atopico">Atopico</string>
+    <string name="title_activity_navegador">Navegador</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="numero_de_telefono">Numero de telefono</string>
+    <string name="obtener_codigo">Obtener Codigo</string>
+    <string name="firebase_login">Ingresar con GOOGLE</string>
+    <string name="ingresar_con_google">Ingresar con GOOGLE</string>
+    <string name="salir_con_google">Salir de tu cuenta.</string>
+    <string name="facebook_application_id" translatable="false">794797977679186</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb794797977679186</string>
+
 </resources>

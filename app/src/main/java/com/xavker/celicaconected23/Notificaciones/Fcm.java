@@ -1,18 +1,23 @@
-package com.xavker.celicaconected23;
+package com.xavker.celicaconected23.Notificaciones;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.NotificationCompat;
+import android.graphics.Bitmap;
+import androidx.core.app.NotificationCompat;
 import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.squareup.picasso.Picasso;
+import com.xavker.celicaconected23.MainActivity;
+import com.xavker.celicaconected23.R;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class Fcm extends FirebaseMessagingService {
@@ -45,8 +50,9 @@ public class Fcm extends FirebaseMessagingService {
            // Log.e("tag","el color es 2: "+remoteMessage.getData().get("color"));
             String titulo=remoteMessage.getData().get("titulo");
             String detalle=remoteMessage.getData().get("detalle");
+            String foto=remoteMessage.getData().get("foto");
 
-            notificaciondependelaversionoreo(titulo,detalle);
+            notificaciondependelaversionoreo(titulo,detalle,foto);
 
 
         }
@@ -55,7 +61,7 @@ public class Fcm extends FirebaseMessagingService {
 
     }
 
-    private void notificaciondependelaversionoreo(String titulo,String detalle) {
+    private void notificaciondependelaversionoreo(String titulo,String detalle,String foto) {
         String id="mensaje";
         NotificationManager nm=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         NotificationCompat.Builder builder=new NotificationCompat.Builder(this,id);
@@ -66,24 +72,32 @@ public class Fcm extends FirebaseMessagingService {
             assert  nm!=null;
             nm.createNotificationChannel(nc);
         }
-        builder.setAutoCancel(true)
-                .setWhen(System.currentTimeMillis())
-                .setContentTitle(titulo)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentIntent(IngresaralaApp())
-                .setContentText(detalle);
+        try {
+            Bitmap imgf_foto= Picasso.with(getApplicationContext()).load(foto).get();
+            builder.setAutoCancel(true)
+                    .setWhen(System.currentTimeMillis())
+                    .setContentTitle(titulo)
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setStyle(new NotificationCompat.BigPictureStyle()
+                    .bigPicture(imgf_foto).bigLargeIcon(null))
+                    .setContentIntent(IngresaralaApp())
+                    .setContentText(detalle);
 
-        Random random=new Random();
-        int idNotify=random.nextInt(8000);
-        assert nm!=null;
-        nm.notify(idNotify,builder.build());
+            Random random=new Random();
+            int idNotify=random.nextInt(8000);
+            assert nm!=null;
+            nm.notify(idNotify,builder.build());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
 
 
 
     }
     public PendingIntent IngresaralaApp(){
-        Intent i=new Intent(getApplicationContext(),MainActivity.class);
+        Intent i=new Intent(getApplicationContext(), MainActivity.class);
         i.putExtra("color","rojo");
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP|Intent.FLAG_ACTIVITY_CLEAR_TOP);
         return PendingIntent.getActivity(this,0,i,0);

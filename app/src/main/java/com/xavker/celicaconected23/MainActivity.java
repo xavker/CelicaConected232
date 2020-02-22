@@ -1,14 +1,12 @@
 package com.xavker.celicaconected23;
 
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.textclassifier.TextLinks;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
@@ -25,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+    String fotocelica="http://gadcelica.gob.ec/wp-content/uploads/2018/03/escudo-celica-300x300.jpeg";
     Button especifico,atopico;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +56,14 @@ public class MainActivity extends AppCompatActivity {
     private void Notificacionespecifica() {
         RequestQueue  myrequest= Volley.newRequestQueue(getApplicationContext());
         JSONObject json=new JSONObject();
-
         try{
             String token="cqct-XWZ7sQ:APA91bHi024aL7hjA5Gl6gt2c56suxLnm-ngRIggsfSlUFM1rkT2k40LWJlUkLWcaHjYU8keriAkPrOQtYTh8YN0ghEVWA9a3Gq0MRytMzOMxBCE6j0a6XMNgSO2UPPeKTBxN8FJBFjW";
             json.put("to",token);
             JSONObject notificacion=new JSONObject();
             notificacion.put("titulo","soy un titulo");
             notificacion.put("detalle","soy un detalle");
+            notificacion.put("foto",fotocelica);
+
             json.put("data",notificacion);
 
             String urlfirebase="https://fcm.googleapis.com/fcm/send";
@@ -98,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject notificacion=new JSONObject();
             notificacion.put("titulo","soy un titulo");
             notificacion.put("detalle","soy un detalle");
+            notificacion.put("foto",fotocelica);
             json.put("data",notificacion);
 
             String urlfirebase="https://fcm.googleapis.com/fcm/send";

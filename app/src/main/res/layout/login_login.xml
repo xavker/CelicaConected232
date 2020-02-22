@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorceleste"
+    tools:context=".Autenticacion.Login">
+
+    <ImageView
+        android:id="@+id/imagenlogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/ic_farebase_logo"
+        android:contentDescription="@string/app_name"
+        />
+    <TextView
+        android:id="@+id/textinicial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/firebase_login"
+        android:textColor="@android:color/white"
+        android:layout_centerHorizontal="true"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/imagenlogo"
+        />
+
+    <ProgressBar
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pgresscircular"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/textinicial"
+        android:onClick="cerrarCecion"
+
+
+        />
+
+
+
+    <Button
+        android:id="@+id/botonlogoutgoogle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:text="@string/salir_con_google"
+        android:layout_marginRight="26dp"
+        android:background="@drawable/round_bg" />
+
+</RelativeLayout>
