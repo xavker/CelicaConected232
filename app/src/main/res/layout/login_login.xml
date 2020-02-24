@@ -37,14 +37,12 @@
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/textinicial"
-        android:onClick="cerrarCecion"
-
-
-        />
+                />
 
 
 
     <Button
+        android:onClick="botoncerrarCecion"
         android:id="@+id/botonlogoutgoogle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

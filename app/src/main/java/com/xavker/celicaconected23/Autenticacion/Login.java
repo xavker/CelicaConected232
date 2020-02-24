@@ -43,10 +43,11 @@ public class Login extends AppCompatActivity {
                 }else {
                     startActivityForResult(AuthUI.getInstance()
                     .createSignInIntentBuilder()
-                            .setAvailableProviders(provider)
-                            .setIsSmartLockEnabled(false)
-
-                            .build(),REQUESTR_CODE
+                    .setAvailableProviders(provider)
+                    .setIsSmartLockEnabled(false)
+                    .setTheme(R.style.LoginUIStyle)
+                    .setLogo(R.mipmap.ic_escudo_round)
+                    .build(),REQUESTR_CODE
 
                     );
                 }
@@ -68,7 +69,7 @@ public class Login extends AppCompatActivity {
         mfirebaseAuth.removeAuthStateListener(mauthListener);
     }
 
-    public void cerrarCecion(View view) {
+    public void botoncerrarCecion(View view) {
         AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

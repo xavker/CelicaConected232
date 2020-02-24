@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.xavker.celicaconected23.Navegador.Menu.SalirCerrarSecion;
 import com.xavker.celicaconected23.R;
 
 public class Navegador extends AppCompatActivity
@@ -126,7 +127,7 @@ public class Navegador extends AppCompatActivity
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new Turismo()).commit();
         }
         else if (id == R.id.salir) {
-          //  fragmentManager.beginTransaction().replace(R.id.contenedor,new Salir()).commit();
+           fragmentManager.beginTransaction().replace(R.id.contenedor,new SalirCerrarSecion()).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
