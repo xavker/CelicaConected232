@@ -16,6 +16,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias.Sugerencias;
+import com.xavker.celicaconected23.Navegador.Menu.Home;
 import com.xavker.celicaconected23.Navegador.Menu.SalirCerrarSecion;
 import com.xavker.celicaconected23.R;
 
@@ -56,7 +58,7 @@ public class Navegador extends AppCompatActivity
         //screenshot=navegacion.findViewById(R.id.captura);
         //screenshot.setVisibility(View.INVISIBLE);
 
-        //fragmentManager.beginTransaction().replace(R.id.contenedor,new Home()).commit();
+        fragmentManager.beginTransaction().replace(R.id.contenedor,new Home()).commit();
     }
 
     @Override
@@ -101,7 +103,7 @@ public class Navegador extends AppCompatActivity
         if (id == R.id.noticias) {
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new ReadRSS()).commit();
         } else if (id == R.id.sugerencia) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Sugerencias()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Sugerencias()).commit();
 
         } else if (id == R.id.planilla_luz) {
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new Luz()).commit();

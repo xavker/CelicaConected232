@@ -1,0 +1,74 @@
+package com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias;
+
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import com.airbnb.lottie.LottieAnimationView;
+import com.xavker.celicaconected23.R;
+
+import androidx.fragment.app.Fragment;
+
+
+public class Sugerencias extends Fragment {
+
+private EditText correo,mensaje;
+private Button enviar;
+public LottieAnimationView lottieAnimationView;
+private LinearLayout grupocorreo;
+public View view;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view=inflater.inflate(R.layout.fragment_esugerencias, container, false);
+        correo=view.findViewById(R.id.correo);
+        mensaje=view.findViewById(R.id.mensaje);
+        enviar=view.findViewById(R.id.enviar);
+        lottieAnimationView=view.findViewById(R.id.intro_lottie_animation_view);
+        grupocorreo=view.findViewById(R.id.grupocorreo);
+
+        enviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!correo.getText().toString().equals("")) {
+                    if(!mensaje.getText().toString().equals("")) {
+                        enviar_email();
+                        //animarprogreso();
+                    }else{
+                        Toast.makeText(getContext(),"Ingrese un valor en el campo mensaje",Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(getContext(),"Ingrese un valor en el campo correo",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+         return view;
+    }
+
+    private void enviar_email() {
+        EnviarCorreo objCorreo = new EnviarCorreo(getActivity(), correo.getText().toString(), "Tienes una Sugerencia", mensaje.getText().toString(),lottieAnimationView,grupocorreo);
+        objCorreo.execute();
+        correo.setText("");
+        mensaje.setText("");
+ /*       Intent intent=new Intent(Intent.ACTION_SENDTO);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{correo.getText().toString()});
+        intent.putExtra(Intent.EXTRA_SUBJECT,"Tengo una consulta");
+        intent.putExtra(Intent.EXTRA_TEXT,mensaje.getText().toString());
+        try{
+            startActivity(Intent.createChooser(intent,"Enviar email"));
+        }catch (Exception e){
+            e.printStackTrace();
+        }*/
+    }
+
+
+}
