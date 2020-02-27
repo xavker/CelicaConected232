@@ -41,7 +41,7 @@ public View view;
                 if(!correo.getText().toString().equals("")) {
                     if(!mensaje.getText().toString().equals("")) {
                         enviar_email();
-                        //animarprogreso();
+
                     }else{
                         Toast.makeText(getContext(),"Ingrese un valor en el campo mensaje",Toast.LENGTH_SHORT).show();
                     }
@@ -54,20 +54,11 @@ public View view;
     }
 
     private void enviar_email() {
-        EnviarCorreo objCorreo = new EnviarCorreo(getActivity(), correo.getText().toString(), "Tienes una Sugerencia", mensaje.getText().toString(),lottieAnimationView,grupocorreo);
+        EnviarCorreo objCorreo = new EnviarCorreo(getActivity(), correo.getText().toString(), "Tienes una Sugerencia en Celica Conect", mensaje.getText().toString(),lottieAnimationView,grupocorreo);
         objCorreo.execute();
         correo.setText("");
         mensaje.setText("");
- /*       Intent intent=new Intent(Intent.ACTION_SENDTO);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_EMAIL,new String[]{correo.getText().toString()});
-        intent.putExtra(Intent.EXTRA_SUBJECT,"Tengo una consulta");
-        intent.putExtra(Intent.EXTRA_TEXT,mensaje.getText().toString());
-        try{
-            startActivity(Intent.createChooser(intent,"Enviar email"));
-        }catch (Exception e){
-            e.printStackTrace();
-        }*/
+
     }
 
 

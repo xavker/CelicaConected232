@@ -16,9 +16,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.xavker.celicaconected23.Navegador.Menu.ConsultarLuz.Luz;
+import com.xavker.celicaconected23.Navegador.Menu.ConsultarTelefono.Telefono;
 import com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias.Sugerencias;
 import com.xavker.celicaconected23.Navegador.Menu.Home;
 import com.xavker.celicaconected23.Navegador.Menu.SalirCerrarSecion;
+import com.xavker.celicaconected23.NoConexion.Noconexion;
 import com.xavker.celicaconected23.R;
 
 public class Navegador extends AppCompatActivity
@@ -106,10 +109,10 @@ public class Navegador extends AppCompatActivity
             fragmentManager.beginTransaction().replace(R.id.contenedor,new Sugerencias()).commit();
 
         } else if (id == R.id.planilla_luz) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Luz()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Luz()).commit();
         }
         else if (id == R.id.planilla_telefono) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Telefono()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Telefono()).commit();
         }
 //        else if (id == R.id.multa_transito) {
 //            fragmentManager.beginTransaction().replace(R.id.contenedor,new MultasTransito()).commit();
