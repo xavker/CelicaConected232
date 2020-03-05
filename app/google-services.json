@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "561379963242-ci0srrn85fg7r1rlte2f0ehaj878on14.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.xavker.celicaconected23",
+            "certificate_hash": "9dcd24b2cd231ce63e852c6b0286096b6357f139"
+          }
+        },
+        {
           "client_id": "561379963242-qcuel9fsujnl457cqe7l81t98ninkmm2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

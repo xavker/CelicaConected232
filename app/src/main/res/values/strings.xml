@@ -115,4 +115,5 @@
         <item>New Zealand</item>
         <item>India</item>
     </string-array>
+    <string name="title_activity_tipos_licencia">TiposLicencia</string>
 </resources>

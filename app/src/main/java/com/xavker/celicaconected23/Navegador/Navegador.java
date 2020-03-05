@@ -21,7 +21,7 @@ import com.xavker.celicaconected23.Navegador.Menu.ConsultarTelefono.Telefono;
 import com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias.Sugerencias;
 import com.xavker.celicaconected23.Navegador.Menu.Home;
 import com.xavker.celicaconected23.Navegador.Menu.SalirCerrarSecion;
-import com.xavker.celicaconected23.NoConexion.Noconexion;
+import com.xavker.celicaconected23.Navegador.Menu.TipoLicencia.Licencia;
 import com.xavker.celicaconected23.R;
 
 public class Navegador extends AppCompatActivity
@@ -118,7 +118,7 @@ public class Navegador extends AppCompatActivity
 //            fragmentManager.beginTransaction().replace(R.id.contenedor,new MultasTransito()).commit();
 //        }
         else if (id == R.id.licencia) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Licencia()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Licencia()).commit();
         }
         else if (id == R.id.ser_bachiller) {
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new SerBachiller()).commit();
