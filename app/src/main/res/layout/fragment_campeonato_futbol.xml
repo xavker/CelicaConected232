@@ -4,14 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Navegador.Menu.TipoLicencia.Licencia">
+    tools:context=".Navegador.Menu.CampeonatoFutbol.CampeonatoFultball">
     <androidx.coordinatorlayout.widget.CoordinatorLayout
-
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-       >
+        >
 
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/appbar"
@@ -49,9 +48,9 @@
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.viewpager.widget.ViewPager
-            android:id="@+id/container"
+            android:id="@+id/pager"
             android:layout_width="match_parent"
-            android:layout_height="619dp"
+            android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

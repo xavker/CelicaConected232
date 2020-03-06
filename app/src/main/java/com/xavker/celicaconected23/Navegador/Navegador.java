@@ -16,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import com.xavker.celicaconected23.Navegador.Menu.CampeonatoFutbol.CampeonatoFultball;
 import com.xavker.celicaconected23.Navegador.Menu.ConsultarLuz.Luz;
 import com.xavker.celicaconected23.Navegador.Menu.ConsultarTelefono.Telefono;
 import com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias.Sugerencias;
@@ -127,7 +128,7 @@ public class Navegador extends AppCompatActivity
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new Conversor()).commit();
         }
         else if (id == R.id.campeonato) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new CampeonatoFutbol()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new CampeonatoFultball()).commit();
         }else if (id == R.id.turismo) {
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new Turismo()).commit();
         }
