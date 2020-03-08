@@ -19,10 +19,12 @@ import android.widget.ImageView;
 import com.xavker.celicaconected23.Navegador.Menu.CampeonatoFutbol.CampeonatoFultball;
 import com.xavker.celicaconected23.Navegador.Menu.ConsultarLuz.Luz;
 import com.xavker.celicaconected23.Navegador.Menu.ConsultarTelefono.Telefono;
+import com.xavker.celicaconected23.Navegador.Menu.Conversor.Conversor;
 import com.xavker.celicaconected23.Navegador.Menu.EnviarSugerencias.Sugerencias;
 import com.xavker.celicaconected23.Navegador.Menu.Home;
 import com.xavker.celicaconected23.Navegador.Menu.SalirCerrarSecion;
 import com.xavker.celicaconected23.Navegador.Menu.TipoLicencia.Licencia;
+import com.xavker.celicaconected23.Navegador.Menu.Turismo.Turismo;
 import com.xavker.celicaconected23.R;
 
 public class Navegador extends AppCompatActivity
@@ -125,12 +127,12 @@ public class Navegador extends AppCompatActivity
             //fragmentManager.beginTransaction().replace(R.id.contenedor,new SerBachiller()).commit();
         }
         else if (id == R.id.conversor) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Conversor()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Conversor()).commit();
         }
         else if (id == R.id.campeonato) {
             fragmentManager.beginTransaction().replace(R.id.contenedor,new CampeonatoFultball()).commit();
         }else if (id == R.id.turismo) {
-            //fragmentManager.beginTransaction().replace(R.id.contenedor,new Turismo()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor,new Turismo()).commit();
         }
         else if (id == R.id.salir) {
            fragmentManager.beginTransaction().replace(R.id.contenedor,new SalirCerrarSecion()).commit();
